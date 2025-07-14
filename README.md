@@ -1,8 +1,8 @@
 to start backend you should:  
 clonne this repo
+you shold use Node v20
 npm i
-also you should connect your pg database, just enter your postgres data to db.js
+npx prisma migrate reset in case there is existed db, but dont forget to migrate it in case there is important information
+npx prisma migrate dev --name init
 npm start
 
-Max number of uploaded files per request is 10.
-User uploads will be stored in /uploads folder in the project root.
