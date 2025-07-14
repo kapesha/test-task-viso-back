@@ -16,6 +16,16 @@ export async function getUserRecipes({ userId }) {
   return recipes.map(({ userId, ...rest }) => rest);
 }
 
+export async function getRecipe({ recipeId }) {
+  const recipe = await prisma.recipe.findUnique({
+    where: {
+      id: recipeId
+    }
+  })
+
+  return recipe
+}
+
 export async function createRecipe(data) {
   const newRecipe = await prisma.recipe.create({
     data: {
